@@ -1,0 +1,7 @@
+Model path: /Users/anushkadhiman/Desktop/work/AI-impactSense/earthquake_impact_rf.pkl
+Feature path: /Users/anushkadhiman/Desktop/work/AI-impactSense/feature_order.pkl
+Model exists: True
+Feature exists: True
+Model loaded successfully: RandomForestClassifier(max_depth=20, min_samples_leaf=2, n_estimators=500,
+                       random_state=42)
+Features: ['magnitude', 'depth', 'cdi', 'mmi', 'sig']
