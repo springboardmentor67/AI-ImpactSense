@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ImpactSense – Earthquake Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌍 ImpactSense</h1>
+    <p>Earthquake Impact Prediction System</p>
+
+    <label>Magnitude</label>
+    <input type="range" id="magnitude" min="1" max="9" step="0.1" value="5">
+    <span id="magVal">5</span>
+
+    <label>Depth (km)</label>
+    <input type="number" id="depth" value="10">
+
+    <label>CDI</label>
+    <input type="number" id="cdi" value="4">
+
+    <label>MMI</label>
+    <input type="number" id="mmi" value="4">
+
+    <label>Significance</label>
+    <input type="number" id="sig" value="50">
+
+    <button onclick="predict()">Predict Impact</button>
+
+    <h2 id="result"></h2>
+</div>
+
+<script>
+document.getElementById("magnitude").oninput = function() {
+    document.getElementById("magVal").innerText = this.value;
+}
+
+function predict() {
+    fetch("/predict", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            magnitude: parseFloat(magnitude.value),
+            depth: parseFloat(depth.value),
+            cdi: parseFloat(cdi.value),
+            mmi: parseFloat(mmi.value),
+            sig: parseFloat(sig.value)
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("result").innerText =
+            "⚠ Alert Level: " + data.alert.toUpperCase();
+    });
+}
+</script>
+
+</body>
+</html>
