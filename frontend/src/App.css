@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #222;
+}
+
+.main-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  min-width: 400px;
+}
+
+.right-panel {
+  max-height: 600px;
+  overflow: auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type=range] {
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease-in-out;
+}
+button:hover {
+  background: #005a9e;
+}
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.result-box {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#chartContainer {
+  max-width: 200px;
+  margin: 10px auto;
+}
+
+.table-container {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+tbody tr:hover {
+  background: #e6f2ff;
+}
+
+/* Color-coded rows */
+.row-red { background: #ffe6e6; }
+.row-orange { background: #fff0e0; }
+.row-yellow { background: #ffffe0; }
+.row-green { background: #e6ffe6; }
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+} 

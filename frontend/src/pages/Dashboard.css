@@ -1,0 +1,153 @@
+/* Layout */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap; /* ensures panels stack on smaller screens */
+}
+
+/* Panels */
+.left-panel, .right-panel {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.left-panel:hover, .right-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Cards for sliders */
+.card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+
+.card:hover {
+  background: #eef7ff;
+}
+
+.card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #1e2a38;
+}
+
+.card input[type="range"] {
+  width: 100%;
+  accent-color: #00c4ff; /* modern slider color */
+}
+
+/* Buttons */
+button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1e2a38, #00c4ff);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00c4ff, #1e2a38);
+  transform: scale(1.05);
+}
+
+/* Result box */
+.result-box {
+  margin-top: 15px;
+  padding: 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Chart container */
+#chartContainer {
+  margin-top: 20px;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Table styling */
+.table-container {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.table-container tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.table-container tr:hover {
+  background: #eef7ff;
+}
+
+.table-container th {
+  position: sticky;
+  top: 0;
+  background: #1e2a38;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* Style for number input boxes */
+.card input[type="number"] {
+  width: 80px;              /* compact width */
+  padding: 6px 8px;         /* comfortable padding */
+  border: 1px solid #ccc;   /* subtle border */
+  border-radius: 6px;       /* rounded corners */
+  font-size: 14px;
+  text-align: center;       /* center numbers */
+  margin-top: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Hover/focus effect */
+.card input[type="number"]:focus {
+  border-color: #007bff;    /* highlight border */
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Keep slider and input visually consistent */
+.card input[type="range"] {
+  width: 100%;
+  margin-top: 6px;
+}
+.card label.number-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #1e2a38;
+} 
